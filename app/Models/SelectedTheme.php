@@ -4,10 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Orchid\Filters\Filterable;
+use Orchid\Screen\AsSource;
 
 class SelectedTheme extends Model
 {
     use HasFactory;
+    use AsSource;
+    use Filterable;
 
     protected $guarded = ['id'];
 
@@ -16,6 +20,8 @@ class SelectedTheme extends Model
         'group_id',
         'theme_id',
     ];
+
+    protected $allowedSorts = [];
 
     public function student(){
         return $this->belongsTo(Student::class);

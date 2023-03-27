@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Orchid\Screens\Docs\DocsScreen;
 use App\Orchid\Screens\Examples\ExampleCardsScreen;
 use App\Orchid\Screens\Examples\ExampleChartsScreen;
 use App\Orchid\Screens\Examples\ExampleFieldsAdvancedScreen;
@@ -9,9 +10,14 @@ use App\Orchid\Screens\Examples\ExampleFieldsScreen;
 use App\Orchid\Screens\Examples\ExampleLayoutsScreen;
 use App\Orchid\Screens\Examples\ExampleScreen;
 use App\Orchid\Screens\Examples\ExampleTextEditorsScreen;
+use App\Orchid\Screens\Group\GroupScreen;
 use App\Orchid\Screens\PlatformScreen;
 use App\Orchid\Screens\Role\RoleEditScreen;
 use App\Orchid\Screens\Role\RoleListScreen;
+use App\Orchid\Screens\Student\StudentScreen;
+use App\Orchid\Screens\Thems\AllThemsScreen;
+use App\Orchid\Screens\Thems\StudentThemsScreen;
+use App\Orchid\Screens\Thems\UserThemsScreen;
 use App\Orchid\Screens\User\UserEditScreen;
 use App\Orchid\Screens\User\UserListScreen;
 use App\Orchid\Screens\User\UserProfileScreen;
@@ -32,6 +38,38 @@ use Tabuna\Breadcrumbs\Trail;
 // Main
 Route::screen('/main', PlatformScreen::class)
     ->name('platform.main');
+
+//------
+//------
+//------
+
+// Platform > Docs
+Route::screen('docs', DocsScreen::class)
+    ->name('platform.docs');
+
+// Platform > Thems > User
+Route::screen('thems/user', UserThemsScreen::class)
+    ->name('platform.thems.user');
+
+// Platform > Thems > All
+Route::screen('thems/all', AllThemsScreen::class)
+    ->name('platform.thems.all');
+
+// Platform > Thems > Student
+Route::screen('selected-thems',StudentThemsScreen::class)
+    ->name('platform.thems.student');
+
+// Platform > Group
+Route::screen('groups', GroupScreen::class)
+    ->name('platform.group');
+
+// Platform > Student
+Route::screen('students', StudentScreen::class)
+    ->name('platform.student');
+
+//------
+//------
+//------
 
 // Platform > Profile
 Route::screen('profile', UserProfileScreen::class)
