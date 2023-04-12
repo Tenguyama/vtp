@@ -21,7 +21,17 @@ class SelectedTheme extends Model
         'theme_id',
     ];
 
-    protected $allowedSorts = [];
+    protected $allowedSorts = [
+        'student_id',
+        'group_id',
+        'theme_id',
+    ];
+
+    protected $allowedFilters = [
+        'student_id',
+        'group_id',
+        'theme_id',
+    ];
 
     public function student(){
         return $this->belongsTo(Student::class);

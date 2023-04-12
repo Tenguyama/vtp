@@ -36,6 +36,10 @@ return [
     */
 
     'guards' => [
+        'std' => [
+            'driver' => 'session',
+            'provider' => 'students',
+        ],
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
@@ -64,7 +68,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-
+        'students' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Student::class,
+        ],
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',

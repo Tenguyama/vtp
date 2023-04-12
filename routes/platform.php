@@ -15,9 +15,9 @@ use App\Orchid\Screens\PlatformScreen;
 use App\Orchid\Screens\Role\RoleEditScreen;
 use App\Orchid\Screens\Role\RoleListScreen;
 use App\Orchid\Screens\Student\StudentScreen;
-use App\Orchid\Screens\Thems\AllThemsScreen;
-use App\Orchid\Screens\Thems\StudentThemsScreen;
-use App\Orchid\Screens\Thems\UserThemsScreen;
+use App\Orchid\Screens\Thems\AllThemesScreen;
+use App\Orchid\Screens\Thems\StudentThemesScreen;
+use App\Orchid\Screens\Thems\UserThemesScreen;
 use App\Orchid\Screens\User\UserEditScreen;
 use App\Orchid\Screens\User\UserListScreen;
 use App\Orchid\Screens\User\UserProfileScreen;
@@ -48,15 +48,15 @@ Route::screen('docs', DocsScreen::class)
     ->name('platform.docs');
 
 // Platform > Thems > User
-Route::screen('thems/user', UserThemsScreen::class)
+Route::screen('thems/user', UserThemesScreen::class)
     ->name('platform.thems.user');
 
 // Platform > Thems > All
-Route::screen('thems/all', AllThemsScreen::class)
+Route::screen('thems/all', AllThemesScreen::class)
     ->name('platform.thems.all');
 
 // Platform > Thems > Student
-Route::screen('selected-thems',StudentThemsScreen::class)
+Route::screen('selected-thems',StudentThemesScreen::class)
     ->name('platform.thems.student');
 
 // Platform > Group
@@ -119,19 +119,5 @@ Route::screen('roles', RoleListScreen::class)
     ->breadcrumbs(fn (Trail $trail) => $trail
         ->parent('platform.index')
         ->push(__('Roles'), route('platform.systems.roles')));
-
-// Example...
-Route::screen('example', ExampleScreen::class)
-    ->name('platform.example')
-    ->breadcrumbs(fn (Trail $trail) => $trail
-        ->parent('platform.index')
-        ->push('Example screen'));
-
-Route::screen('example-fields', ExampleFieldsScreen::class)->name('platform.example.fields');
-Route::screen('example-layouts', ExampleLayoutsScreen::class)->name('platform.example.layouts');
-Route::screen('example-charts', ExampleChartsScreen::class)->name('platform.example.charts');
-Route::screen('example-editors', ExampleTextEditorsScreen::class)->name('platform.example.editors');
-Route::screen('example-cards', ExampleCardsScreen::class)->name('platform.example.cards');
-Route::screen('example-advanced', ExampleFieldsAdvancedScreen::class)->name('platform.example.advanced');
 
 //Route::screen('idea', Idea::class, 'platform.screens.idea');

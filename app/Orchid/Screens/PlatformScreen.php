@@ -27,7 +27,7 @@ class PlatformScreen extends Screen
      */
     public function name(): ?string
     {
-        return 'Get Started';
+        return 'Веб-ресурс "Дипломне проєктування"';
     }
 
     /**
@@ -37,7 +37,7 @@ class PlatformScreen extends Screen
      */
     public function description(): ?string
     {
-        return 'Welcome to your Orchid application.';
+        return 'Адмін панель на базі Laravel ORCHID';
     }
 
     /**
@@ -69,9 +69,6 @@ class PlatformScreen extends Screen
      */
     public function layout(): iterable
     {
-        return [
-            Layout::view('platform::partials.update-assets'),
-            Layout::view('platform::partials.welcome'),
-        ];
+        return [];
     }
 }

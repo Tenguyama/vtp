@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Orchid\Filters\Filterable;
 use Orchid\Screen\AsSource;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Student extends Model
+class Student extends Authenticatable
 {
     use HasFactory;
     use AsSource;
@@ -22,9 +23,9 @@ class Student extends Model
         'google_id',
     ];
 
-    protected $allowedSorts = ['name',];
+    protected $allowedSorts = ['name', 'email'];
 
-    protected $allowedFilters = ['name',];
+    protected $allowedFilters = ['name', 'email'];
 
     public function selectedTheme(){
         return $this->hasOne(SelectedTheme::class);
